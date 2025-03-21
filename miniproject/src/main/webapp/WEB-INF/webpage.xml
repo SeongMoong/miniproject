@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans:beans xmlns="http://www.springframework.org/schema/mvc" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:context="http://www.springframework.org/schema/context" 
+xmlns:beans="http://www.springframework.org/schema/beans" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd 
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd 
+http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+<resources location="/" mapping="/**"/>
+<!--  View 형태를 어떤 형태의 파일로 보여지도록 할 것인지 환경설정
+	<beans:property name="prefix" value="/WEB-INF/">
+	prefix : jsp파일을 모여있는 디렉토리를 설정
+	suffix : Controller에서 view파일 속성을 설정할 수 있음(requestDispacher 기능)
+	  -->
+<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+<beans:property name="prefix" value="/"/>
+<beans:property name="suffix" value=".jsp"/>
+</beans:bean>
+
+<context:component-scan base-package="miniproject"/>
+
+<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+<beans:property name="defaultEncoding" value="utf-8"/>
+<beans:property name="maxUploadSize" value="-1"/>
+<!--  <beans:property name="maxUploadSize" value="2097152"></beans:property>  -->
+<beans:property name="maxInMemorySize" value="2097152"/>
+</beans:bean>
+
+
+
+</beans:beans>
