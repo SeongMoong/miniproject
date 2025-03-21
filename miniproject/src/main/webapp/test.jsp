@@ -8,6 +8,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-${test}
+${"test"}
 </body>
 </html>
