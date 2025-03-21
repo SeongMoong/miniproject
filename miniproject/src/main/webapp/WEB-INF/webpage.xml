@@ -8,6 +8,8 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd 
 http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
+<annotation-driven></annotation-driven>
+
 <resources location="/" mapping="/**"/>
 <!--  View 형태를 어떤 형태의 파일로 보여지도록 할 것인지 환경설정
 	<beans:property name="prefix" value="/WEB-INF/">
