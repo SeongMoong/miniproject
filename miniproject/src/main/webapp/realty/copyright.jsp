@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="co" uri="http://java.sun.com/jsp/jstl/core" %>
+
   <div class="copyright">
     <ol>
       <li>
@@ -27,12 +29,12 @@
       </li>
       <li>
         <ul>
-          <li>e-Click 주식회사 | 대표 : 홍길동</li>
-          <li>서울특별시 종로구 3가 국일빌딩 5F</li>
-          <li>사업자번호 : 211-81-12345 | 통신판매업 : 2023-서울종로-1234호</li>
-          <li>정보보호책임자 : 홍길동</li>
-          <li>영업문의 : 02-123-5678</li>
-          <li>팩스번호 : 02-550-1234</li>
+          <li>${copylist.get(0).bunyang_company} | 대표 :  ${copylist.get(0).bunyang_ceo}</li>
+          <li>${copylist.get(0).bunyang_addr}</li>
+          <li>사업자번호 : ${copylist.get(0).bunyang_bnumber} | 통신판매업 : ${copylist.get(0).bunyang_onumber}</li>
+          <li>정보보호책임자 : ${copylist.get(0).bunyang_response}</li>
+          <li>영업문의 : ${copylist.get(0).bunyang_inquiry}</li>
+          <li>팩스번호 : ${copylist.get(0).bunyang_fax}</li>
         </ul>
       </li>
     </ol>

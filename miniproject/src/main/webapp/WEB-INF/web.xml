@@ -10,6 +10,7 @@
 
 <!--  Controller을 사용할 수 있는 옵션  -->
 <param-value>
+/WEB-INF/db_config.xml
 /WEB-INF/webpage.xml
 </param-value>
 

@@ -28,7 +28,7 @@
 
   <!--금주 분양 매물 정보 시작-->
   <section>
-  <cr:import url="./weekinfo.jsp"></cr:import>
+  <cr:import url="./weekinfo.do"></cr:import>
   </section>
     <!-- weekinfo.jsp -->
   
@@ -36,7 +36,7 @@
 
   <!--추천 분양 정보-->
   <section>
-  <cr:import url="./mdchoice.jsp"></cr:import>
+  <cr:import url="./mdchoice.do"></cr:import>
   </section>
   <!--추천 분양 정보 끝-->
 
@@ -46,7 +46,7 @@
  <!-- 카피라이터 -->
  <footer>
  <!-- copyright.jsp -->
-  <cr:import url="./copyright.jsp"></cr:import>
+  <cr:import url="./copyright.do"></cr:import>
  </footer>
  
 </body>

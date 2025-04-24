@@ -1,0 +1,81 @@
+create table web_info (
+bunyang_index int unsigned auto_increment,
+bunyang_company char(100) null,
+bunyang_ceo varchar(100) null,
+bunyang_addr varchar(100) null,
+bunyang_bnumber char(12) null,
+bunyang_onumber varchar(40) null,
+bunyang_response char(30) null,
+bunyang_inquiry char(40) null,
+bunyang_fax char(40) null,
+primary key(bunyang_index)
+)
+
+insert into web_info value('0','e-Click 주식회사','홍길동','서울시 마포구 중앙빌딩 4F 402호','211-80-12334','2023-서울마포-3362호','정성문','02-221-2668','02-550-5591');
+
+create table md_choice (
+bunyang_index int unsigned auto_increment,
+bunyang_title varchar(100) not null,
+bunyang_subject varchar(100) not null,
+bunyang_img text null,
+bunyang_link varchar(200) null,
+primary key(bunyang_index)
+);
+
+insert into md_choice value(
+  '0',
+  '도심속에코 라이프입지<br>‘‘군산 레이크시티 아이파크’’',
+  '레이크 라이프 누릴 수 있는 프리미엄 조경에<br>입주민 라이프스타일 맞춤형 평면 설계까지',
+  'md_1.jpg',
+  'https://www.r114.com/?_c=lots&_m=lotsnews&_a=newsdetail&bno=70&kind=0&search_keyword=&search_writer=&search_addr1=&search_addr2=&search_addr3=&sort=1&sort2=down&page=1&num=14428'
+);
+
+insert into md_choice value(
+  '0',
+  '청주 가경 아이파크 6단지 <br> 합리적인 분양가!',
+  '브랜드 시티의 중심 <br> 중대형 중심의 공간 특화!',
+  'md_2.jpg',
+  'https://www.r114.com/?_c=lots&_m=lotsnews&_a=newsdetail&bno=70&kind=0&search_keyword=&search_writer=&search_addr1=&search_addr2=&search_addr3=&sort=1&sort2=down&page=1&num=14430'
+);
+
+insert into md_choice value(
+  '0',
+  '풍부한 중심생활 인프라<br>‘‘보문 센트럴 아이파크’’',
+  '보문역 초역세권<br>성북천의 쾌적한 힐링 라이프',
+  'md_3.jpg',
+  'https://www.r114.com/?_c=lots&_m=lotsnews&_a=newsdetail&bno=70&kind=0&search_keyword=&search_writer=&search_addr1=&search_addr2=&search_addr3=&sort=1&sort2=down&page=1&num=14426'
+);
+
+insert into md_choice value(
+  '0',
+  '서산 첫 아이파크<br>‘‘서산 센트럴 아이파크’’',
+  '도보로 누리는 안심 통학권<br>최고 29층, 서산의 랜드마크',
+  'md_4.jpg',
+  'https://www.r114.com/?_c=lots&_m=lotsnews&_a=newsdetail&bno=70&kind=0&search_keyword=&search_writer=&search_addr1=&search_addr2=&search_addr3=&sort=1&sort2=down&page=1&num=14429'
+);
+
+create table type_info (
+bunyang_index int unsigned auto_increment,
+bunyang_title varchar(100) not null,
+bunyang_addr varchar(200) not null,
+bunyang_part char(20) not null,
+bunyang_info char(20) not null,
+bunyang_date varchar(50) not null,
+bunyang_in varchar(50) not null,
+bunyang_img text null,
+bunyang_str varchar(50) not null,
+bunyang_scale varchar(10) not null,
+bunyang_building varchar(10) not null,
+bunyang_company varchar(100) not null,
+bunyang_situation char(10) not null,
+primary key(bunyang_index)
+)
+
+insert into type_info value('0','LH센트럴힐(공공임대)','서울시 송파구 문정동 12-2','아파트','공공임대','2025.04 분양','2027.02 입주','room1.jpg','개별난방,도시가스','1670','14','GS건설㈜','오픈');
+insert into type_info value('0','힐스테이트e편한세상파주','경기도 파주시 동패동 36-4','아파트','민간분양','2025.06 분양','2027.09 입주','room2.jpg','지역난방,열병합','1200','6','(주)대광건영','접수');
+insert into type_info value('0','청주가경아이파크6단지','청주시 가경동 64-3','아파트','민간분양','2025.08 분양','2028.01 입주','room3.jpg','개별난방,도시가스','600','4','GS건설㈜','접수');
+insert into type_info value('0','원봉공원힐데스하임','청주시 용암동 38-6','아파트','민간분양','2025.12 분양','2027.11 입주','room4.jpg','개별난방,도시가스','650','6','(주)제일건설','접수');
+insert into type_info value('0','청계리버뷰자이(민간분양)','서울시 성동구 용답동 3가 62-2','아파트','민간분양','2025.07 분양','2028.05 입주','room5.jpg','개별난방,도시가스','580','5','롯데건설(주)','접수');
+insert into type_info value('0','제일풍경채검단IV(AA22)','세종특별시 서구 원당동 21-4','아파트','민간분양','2025.10 분양','2026.11 입주','room6.jpg','지역난방,열병합','800','3','(주)세담종합건설','접수');
+insert into type_info value('0','소사역롯세캐슬더뉴엘','부천시 소사본동 2가 23','아파트','민간분양','2025.10 분양','2027.03 입주','room7.jpg','지역난방,열병합','1200','11','(주)세담종합건설','접수');
+insert into type_info value('0','삼익더랩소디','서울시 강서구 내발산동 3-2','아파트','공공임대','2025.04 분양','2026.12 입주','room8.jpg','개별난방,도시가스','800','7','현대엔지니어링(주)','오픈');

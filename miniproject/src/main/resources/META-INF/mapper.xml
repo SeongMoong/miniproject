@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="miniproject.mini_mapper"> <!-- mini_mapper 가져오기(연결) -->
+
+<!-- COALESCE(#{binfo},'N') : null값으로 들어오면 'N'으로 바꾸는 함수 -->
+<insert id ="user_insert">
+insert into user_information (bidx, bemail, bpass, bname, btel, binfo1, binfo2, binfo3, binfo4, bdate)
+values ('0',#{bemail},#{bpass},#{bname},#{btel},#{binfo1},#{binfo2},#{binfo3},#{binfo4}, now());
+</insert>
+
+<insert id="counsel_insert">
+insert into counsel (bidx, bname, bemail, btel, brent, blive, bday, bsubject, bdate)
+value('0',#{bname},#{bemail},#{btel},#{brent},#{blive},#{bday},#{bsubject},now());
+</insert>
+
+<select id="reservation_result" resultType="reservationdto">
+select * from reservation where rtel = #{rtel} order by ridx desc limit 1;
+</select>
+
+<insert id="reservation_insert">
+insert into reservation (ridx, rtitle, rdate, rtime, rpeople, rname, rtel, rtdate)
+values('0',#{rtitle},#{rdate},#{rtime},#{rpeople},#{rname},#{rtel},now());
+</insert>
+
+<!-- week_tails에서 해당 index값 게시판 출력 weekinfo select(type_info) -->
+<select id="typeinfo_selectone" parameterType="String" resultType="typeinfo">
+select * from type_info where bunyang_index = #{bunyang_index}
+</select>
+
+
+<!-- email_search -->
+<select id="email_search" parameterType="userdto" resultType="userdto">
+        select bidx, bemail, bpass, bname, btel, binfo1, binfo2, binfo3, binfo4, bdate
+        from user_information
+        where bname = #{bname} AND btel = #{btel}
+</select>
+
+<select id="login_select" parameterType="userdto" resultType="userdto">
+        select bidx, bemail, bpass, bname, btel, binfo1, binfo2, binfo3, binfo4, bdate
+        from user_information
+        where bemail = #{bemail} AND bpass = #{bpass}
+</select>
+
+<!-- <insert id="mdchoice_insert">
+insert into md_choice (bunyang_index, bunyang_title, bunyang_subject,bunyang_img,bunyang_writer, bunyang_date)
+</insert> -->
+
+<!-- md_choice select -->
+<select id="mdchoice_select" resultType="mdchoice">
+select * from md_choice order by bunyang_index desc limit 4
+</select>
+
+<!-- weekinfo select(type_info) -->
+<select id="typeinfo_select" resultType="typeinfo">
+select * from type_info order by bunyang_index desc limit 8
+</select>
+
+<!-- copyright select -->
+<select id="copyright_select" resultType="webinfodto">
+select * from web_info order by bunyang_index desc
+</select>
+
+</mapper>

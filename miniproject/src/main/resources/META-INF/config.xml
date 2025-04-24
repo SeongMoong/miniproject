@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- DTO, VO를 연결해 주는 역할 (Controller, Model) -->
+<configuration>
+<typeAliases>
+<!-- ***새로운 DTO가 있을 경우에만 사용하는 xml 입니다. -->
+<!-- alias : 별명 명칭, type : 패키지와 class명을 사용해야 합니다. -->
+
+	<typeAlias alias="userdto" type="miniproject.user_DTO"/>
+	<typeAlias alias="webinfodto" type="miniproject.web_info_DTO"/>
+	<typeAlias alias="mdchoice" type="miniproject.md_choice_DTO"/>
+	<typeAlias alias="typeinfo" type="miniproject.type_info_DTO"/>
+	<typeAlias alias="reservationdto" type="miniproject.reservation_DTO"/>
+	<typeAlias alias="counseldto" type="miniproject.counsel_DTO"/>
+</typeAliases>
+</configuration>
